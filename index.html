@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Act One_ | Software Profesional de Guion Cinematográfico</title>
-    <meta name="description" content="Escribe cine. Simple. Sin distracciones. Formato Fountain 1.1, exportación a PDF y Word, estadísticas y compromiso Early Bird con versiones 1.x y 2.x incluidas.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
+<!DOCTYPE html><html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Act One_ | Software Profesional de Guion Cinematográfico</title>
+<meta content="Escribe cine. Sin distracciones, sin la nube y sin suscripciones. Formato Fountain 1.1, exportación a PDF y Word, estadísticas y compromiso Early Bird con versiones 1.x y 2.x incluidas." name="description">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -44,578 +42,373 @@
     </script>
 </head>
 <body class="bg-cream-100 text-paper-text font-sans antialiased selection:bg-brand-teal selection:text-white">
+<!-- BARRA ANUNCIO EARLY BIRD -->
+<div class="bg-brand-darkTeal text-white text-center py-2.5 px-4 text-sm font-medium shadow-sm">
+        🎬 <span class="" data-i18n="announcement"><strong>Oferta Fundador (Early Bird):</strong> Licencia Pro por solo <strong>$15 USD</strong> hasta el 31/12 (Incluye versiones 1.x y la futura 2.x).</span>
+<a class="underline font-bold ml-1 hover:text-teal-200" data-i18n="announcement_link" href="#precios">Aprovechar oferta →</a>
+</div>
+<!-- ENCABEZADO / NAVBAR -->
+<header class="sticky top-0 z-50 backdrop-blur-md bg-cream-100/90 border-b border-paper-border">
+<div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+<a class="flex items-center gap-2 text-xl font-extrabold tracking-tight text-paper-text" href="#" style="white-space: nowrap;">
+<span class="bg-brand-darkTeal text-white px-2 py-0.5 rounded font-mono font-bold">A1_</span>
+<span class="" style="white-space: nowrap;">Act One<span class="text-brand-darkTeal">_</span></span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm text-paper-muted font-medium">
+<a class="hover:text-paper-text transition" data-i18n="nav_features" href="#funciones">Funcionalidades</a>
+<a class="hover:text-paper-text transition" data-i18n="nav_keyboard" href="#atajos">Flujo de Escritura</a>
 
-    <!-- BARRA ANUNCIO EARLY BIRD -->
-    <div class="bg-brand-darkTeal text-white text-center py-2.5 px-4 text-sm font-medium shadow-sm">
-        🎬 <span data-i18n="announcement"><strong>Oferta Fundador (Early Bird):</strong> Licencia Pro por solo <strong>$10 USD</strong> hasta el 31/12 (Incluye versiones 1.x y la futura 2.x).</span> 
-        <a href="#precios" class="underline font-bold ml-1 hover:text-teal-200" data-i18n="announcement_link">Aprovechar oferta →</a>
-    </div>
-
-    <!-- ENCABEZADO / NAVBAR -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-cream-100/90 border-b border-paper-border">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2 text-xl font-extrabold tracking-tight text-paper-text">
-                <span class="bg-brand-darkTeal text-white px-2 py-0.5 rounded font-mono font-bold">A1_</span>
-                <span>Act One<span class="text-brand-darkTeal">_</span></span>
-            </a>
-            
-            <nav class="hidden md:flex items-center gap-6 text-sm text-paper-muted font-medium">
-                <a href="#funciones" class="hover:text-paper-text transition" data-i18n="nav_features">Funcionalidades</a>
-                <a href="#atajos" class="hover:text-paper-text transition" data-i18n="nav_keyboard">Flujo de Escritura</a>
-                <a href="#comparativa" class="hover:text-paper-text transition" data-i18n="nav_compare">Comparativa</a>
-                <a href="#roadmap" class="hover:text-paper-text transition" data-i18n="nav_evolution">Evolución</a>
-                <a href="#about" class="hover:text-paper-text transition font-bold text-brand-darkTeal" data-i18n="nav_about">Intenciones</a>
-                <a href="#precios" class="hover:text-paper-text transition" data-i18n="nav_pricing">Precios</a>
-            </nav>
-
-            <div class="flex items-center gap-3">
-                <!-- SELECTOR DE IDIOMA ARRIBA A LA DERECHA -->
-                <div class="flex items-center bg-cream-200 border border-paper-border rounded-lg p-0.5 text-xs font-bold text-stone-600">
-                    <button id="lang-es" onclick="switchLanguage('es')" class="px-2 py-1 rounded bg-white text-brand-darkTeal shadow-xs transition">ES</button>
-                    <button id="lang-en" onclick="switchLanguage('en')" class="px-2 py-1 rounded hover:text-brand-darkTeal transition">EN</button>
-                </div>
-
-                <a href="#precios" class="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-lg text-sm font-semibold bg-paper border border-paper-border hover:bg-cream-200 text-paper-text transition shadow-sm" data-i18n="btn_demo">
+<a class="hover:text-paper-text transition" data-i18n="nav_evolution" href="#roadmap">Evolución</a>
+<a class="hover:text-paper-text transition" data-i18n="nav_about" href="#about">Intenciones</a>
+<a class="hover:text-paper-text transition" data-i18n="nav_pricing" href="#precios">Precios</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="flex items-center bg-cream-200 border border-paper-border rounded-lg p-0.5 text-xs font-bold text-stone-600">
+<button class="px-2 py-1 rounded bg-white text-brand-darkTeal shadow-xs transition" id="lang-es" onclick="switchLanguage('es')">ES</button>
+<button class="px-2 py-1 rounded hover:text-brand-darkTeal transition" id="lang-en" onclick="switchLanguage('en')">EN</button>
+</div>
+<a class="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-lg text-sm font-semibold bg-paper border border-paper-border hover:bg-cream-200 text-paper-text transition shadow-sm justify-center text-center" data-i18n="btn_demo" href="#precios">
                     Descargar Demo
                 </a>
-                <a href="#precios" class="inline-flex items-center px-3.5 py-1.5 rounded-lg text-sm font-semibold bg-brand-darkTeal hover:bg-brand-teal text-white transition shadow-sm" data-i18n="btn_buy_top">
-                    Comprar Pro ($10)
+<a class="inline-flex items-center px-3.5 py-1.5 rounded-lg text-sm font-semibold bg-brand-darkTeal hover:bg-brand-teal text-white transition shadow-sm justify-center text-center" data-i18n="btn_buy_top" href="#precios">
+                    Comprar Pro ($15)
                 </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="relative pt-20 pb-16 px-6 overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cream-200 border border-paper-border text-brand-darkTeal text-xs font-semibold uppercase tracking-wider mb-6" data-i18n="hero_badge">
+</div>
+</div>
+</header>
+<!-- HERO SECTION -->
+<section class="relative pt-20 pb-16 px-6 overflow-hidden">
+<div class="max-w-4xl mx-auto text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cream-200 border border-paper-border text-brand-darkTeal text-xs font-semibold uppercase tracking-wider mb-6" data-i18n="hero_badge">
                 Windows 10/11 • 100% Offline • Formato Fountain 1.1
             </div>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-paper-text">
-                <span data-i18n="hero_title_1">Escribe cine.</span><br>
-                <span class="text-brand-darkTeal" data-i18n="hero_title_2">Simple. Sin distracciones.</span>
-            </h1>
-            <p class="text-lg sm:text-xl text-paper-muted max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="hero_desc">
+<h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-paper-text">
+<span class="" data-i18n="hero_title_1">Escribe cine.</span><br>
+<span class="text-brand-darkTeal" data-i18n="hero_title_2">Simple. Sin distracciones.</span>
+</h1>
+<p class="text-lg sm:text-xl text-paper-muted max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="hero_desc">
                 El entorno de guion cinematográfico ágil, privado y de <strong>pago único</strong>. Tu pase Early Bird te da acceso inmediato a la versión 1.0 y asegura tu actualización a la versión 2.0 sin costos extra.
             </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-                <!-- REEMPLAZAR '#' CON EL LINK DIRECTO AL INSTALADOR DEMO -->
-                <a href="#precios" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-bold bg-white text-paper-text border border-paper-border hover:bg-cream-200 transition shadow-sm">
-                    <svg class="w-5 h-5 text-brand-darkTeal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                    <span data-i18n="hero_btn_demo">Descargar Versión DEMO Gratis</span>
-                </a>
-                <!-- REEMPLAZAR '#' CON TU CHECKOUT DE LEMON SQUEEZY -->
-                <a href="#precios" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold bg-brand-darkTeal hover:bg-brand-teal text-white transition shadow-md shadow-teal-900/10">
-                    <span data-i18n="hero_btn_buy">Comprar Licencia Pro — $10 USD</span>
-                    <span class="text-xs bg-white/20 px-2 py-0.5 rounded font-semibold" data-i18n="hero_badge_buy">Early Bird (v1 + v2)</span>
-                </a>
-            </div>
-            <p class="text-xs text-paper-muted" data-i18n="hero_subtext">
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+<!-- LINK DIRECTO AL INSTALADOR DEMO -->
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-bold bg-white text-paper-text border border-paper-border hover:bg-cream-200 transition shadow-sm" href="#precios">
+<svg class="w-5 h-5 text-brand-darkTeal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="" data-i18n="hero_btn_demo">Descargar Versión DEMO Gratis</span>
+</a>
+<!-- CHECKOUT LEMON SQUEEZY -->
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold bg-brand-darkTeal hover:bg-brand-teal text-white transition shadow-md shadow-teal-900/10" href="#precios">
+<span class="" data-i18n="hero_btn_buy">Comprar Licencia Pro — $15 USD</span>
+<span class="text-xs bg-white/20 px-2 py-0.5 rounded font-semibold" data-i18n="hero_badge_buy">Early Bird (v1 + v2)</span>
+</a>
+</div>
+<p class="text-xs text-paper-muted" data-i18n="hero_subtext">
                 Instalador autónomo para Windows • Prueba gratis hasta 10 páginas • Desbloqueo sin reinstalar.
             </p>
-        </div>
-
-        <!-- MAQUETA VISUAL ESTÁTICA -->
-        <div class="max-w-5xl mx-auto mt-12 rounded-2xl border border-paper-border bg-white shadow-xl overflow-hidden">
-            <div class="bg-cream-200 px-4 py-2.5 border-b border-paper-border flex items-center justify-between text-xs text-paper-muted">
-                <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-red-400"></span>
-                    <span class="w-3 h-3 rounded-full bg-amber-400"></span>
-                    <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
-                    <span class="ml-2 font-mono text-paper-text font-medium">Mi_Guion.fountain - Act One_</span>
-                </div>
-                <span class="px-2 py-0.5 rounded bg-teal-100 text-brand-darkTeal font-mono text-[11px] font-bold">v1.0.0 Pro</span>
-            </div>
-            <div class="grid grid-cols-12 min-h-[340px] text-left">
-                <!-- Panel Outline -->
-                <div class="hidden md:block col-span-3 border-r border-paper-border p-4 bg-cream-50">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold uppercase tracking-wider text-paper-muted" data-i18n="mock_scenes_title">Escenas (3)</span>
-                        <span class="text-xs bg-brand-darkTeal text-white px-2 py-0.5 rounded font-semibold">+ Escena</span>
-                    </div>
-                    <div class="text-xs bg-white text-paper-muted px-2.5 py-1.5 rounded mb-3 border border-paper-border" data-i18n="mock_filter_placeholder">🔍 Filtrar escenas...</div>
-                    <ul class="space-y-1.5 text-xs font-mono">
-                        <li class="p-2 rounded bg-teal-50 text-brand-darkTeal border-l-2 border-brand-teal font-bold">1. INT. SALA DE CONTROL - NOCHE</li>
-                        <li class="p-2 rounded text-paper-muted">2. EXT. COMPLEJO INDUSTRIAL - CONTINUO</li>
-                        <li class="p-2 rounded text-paper-muted">3. INT. ARCHIVO HISTÓRICO - DÍA</li>
-                    </ul>
-                </div>
-                <!-- Hoja de Guion Centrada -->
-                <div class="col-span-12 md:col-span-6 p-6 sm:p-8 bg-paper font-mono text-sm leading-relaxed text-paper-text shadow-inner">
-                    <div class="flex gap-4 mb-4">
-                        <span class="text-stone-400 font-bold select-none">1</span>
-                        <p class="font-bold tracking-wide text-stone-900">INT. SALA DE CONTROL - NOCHE</p>
-                    </div>
-                    <p class="mb-4 pl-6 text-stone-800" data-i18n="mock_script_action">Silencio absoluto. Las pantallas parpadean proyectando una luz tenue sobre la consola.</p>
-                    <p class="text-center font-bold tracking-wider mt-4 text-stone-900">MARTÍN</p>
-                    <p class="text-center italic text-stone-500 text-xs" data-i18n="mock_script_paren">(observando el mapa)</p>
-                    <p class="px-8 sm:px-12 mb-4 text-stone-800" data-i18n="mock_script_dialogue">Todo el guion está guardado en local. Sin suscripciones ni cobros recurrentes de versiones.</p>
-                </div>
-                <!-- Inspector de Personajes -->
-                <div class="hidden md:block col-span-3 border-l border-paper-border p-4 bg-cream-50 text-xs">
-                    <div class="text-xs font-bold uppercase tracking-wider text-paper-muted mb-3" data-i18n="mock_inspector_title">Inspector (Personajes)</div>
-                    <div class="space-y-2">
-                        <div class="p-2.5 rounded bg-white border border-paper-border flex justify-between items-center shadow-xs">
-                            <div>
-                                <div class="font-bold text-stone-900">MARTÍN</div>
-                                <div class="text-[11px] text-stone-500" data-i18n="mock_martin_lines">38 intervenciones</div>
-                            </div>
-                            <span class="text-brand-darkTeal font-bold">64%</span>
-                        </div>
-                        <div class="p-2.5 rounded bg-white border border-paper-border flex justify-between items-center shadow-xs">
-                            <div>
-                                <div class="font-bold text-stone-900">LUCÍA</div>
-                                <div class="text-[11px] text-stone-500" data-i18n="mock_lucia_lines">22 intervenciones</div>
-                            </div>
-                            <span class="text-brand-darkTeal font-bold">36%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FUNCIONALIDADES PRINCIPALES -->
-    <section id="funciones" class="py-20 px-6 bg-cream-200/60 border-y border-paper-border">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-paper-text" data-i18n="feat_title">Todo lo que exige la industria. Cero curvas de aprendizaje.</h2>
-                <p class="text-paper-muted" data-i18n="feat_subtitle">Construido con arquitectura nativa de escritorio para ofrecer escritura instantánea incluso en guiones de cientos de páginas.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- 1. Flujo Tab / Enter -->
-                <div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
-                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">Tab</div>
-                    <h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_1_t">Flujo Inteligente Tab / Enter</h3>
-                    <p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_1_d">
+</div>
+<!-- VISTA DE LA INTERFAZ / EDITOR DE GUION INTERACTIVO PREVIEW -->
+<div class="mx-auto mt-12 rounded-2xl border border-paper-border bg-white shadow-xl overflow-hidden max-w-6xl text-left select-none"><div class="bg-[#EAEFF5] text-stone-800 text-xs overflow-x-auto" id="mockup-vector"><div class="min-w-[980px]"><div class="bg-white border-b border-stone-200 px-3 py-1 flex items-center gap-5 text-stone-600 text-xs"><span class="cursor-pointer hover:text-stone-900">Archivo</span><span class="cursor-pointer hover:text-stone-900">Editar</span><span class="cursor-pointer hover:text-stone-900">Formato</span><span class="cursor-pointer hover:text-stone-900">Ver</span><span class="cursor-pointer hover:text-stone-900">Herramientas</span><span class="cursor-pointer hover:text-stone-900">Configuración</span><span class="cursor-pointer hover:text-stone-900">Ayuda</span></div><div class="bg-white border-b border-stone-200 px-3 py-1.5 flex items-center justify-between text-xs"><div class="flex items-center gap-3"><div class="flex items-center gap-2 text-stone-600 pr-3 border-r border-stone-200"><span class="cursor-pointer hover:text-brand-darkTeal">Nuevo</span><span class="cursor-pointer hover:text-brand-darkTeal">Abrir</span><span class="cursor-pointer hover:text-brand-darkTeal">Guardar</span></div><div class="flex items-center gap-1.5"><span class="text-stone-500 text-[11px]">Formato:</span><div class="border border-stone-300 rounded px-2 py-0.5 bg-white text-stone-800 flex items-center justify-between w-48 shadow-xs"><span class="">Encabezado de Escena</span><span class="text-[9px] text-stone-400">▼</span></div></div><div class="flex items-center gap-2 pl-3 border-l border-stone-200 text-stone-600"><span class="cursor-pointer hover:text-stone-900">Deshacer</span><span class="cursor-pointer hover:text-stone-900">Rehacer</span></div></div><div class="text-[11px] text-stone-400">Act One_ v1.0.0</div></div><div class="flex items-stretch h-[540px]"><div class="w-56 shrink-0 bg-white border-r border-stone-200 flex flex-col"><div class="px-3 py-2 border-b border-stone-200 flex items-center justify-between"><span class="font-bold text-[11px] text-stone-700">Estructura de Escenas (Outline)</span></div><div class="p-2 border-b border-stone-100 flex items-center justify-between gap-1"><span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider">ESCENAS</span><span class="text-[10px] text-stone-400">2 escenas</span></div><div class="p-2 flex items-center gap-1.5 border-b border-stone-100"><input class="w-full px-2 py-1 text-xs border border-stone-200 rounded bg-stone-50 text-stone-600 placeholder-stone-400 focus:outline-none" placeholder="Filtrar escenas..." readonly="" type="text"><button class="px-2 py-1 text-xs font-bold rounded bg-brand-darkTeal text-white shrink-0">+ Escena</button></div><div class="flex-1 overflow-y-auto divide-y divide-stone-100 text-[11px]"><div class="px-3 py-2 bg-teal-50 border-l-2 border-brand-darkTeal font-medium text-stone-900 cursor-pointer">INT. CAFETERÍA LA HABANA - DÍA</div><div class="px-3 py-2 text-stone-600 hover:bg-stone-50 cursor-pointer">EXT. CALLE CENTRAL - CONTINUO</div></div></div><div class="flex-1 bg-[#EEF2F6] overflow-y-auto p-6 flex justify-center"><div class="w-[580px] min-h-[700px] bg-white shadow-md border border-stone-200 p-10 font-mono text-stone-900 leading-normal relative" style="font-family: 'Courier Prime', Courier, monospace; font-size: 12px;"><div class="absolute left-4 top-10 font-bold text-brand-darkTeal">1</div><div class="font-bold text-blue-900 mb-4 tracking-wide">INT. CAFETERÍA LA HABANA - DÍA</div><p class="mb-4 text-stone-800 leading-relaxed">Luz suave entra por los grandes ventanales. El aroma a café recién tostado inunda el ambiente.</p><p class="mb-4 text-stone-800 leading-relaxed">En una mesa del rincón, MARCOS (30s) revisa nerviosamente un fajo de notas manuscritas.</p><p class="mb-6 text-stone-800 leading-relaxed">La puerta de entrada repiquetea con una campana. Entra SOFÍA (30s), abrigo largo y mirada penetrante.</p><div class="text-center mb-4 pl-12 pr-12"><div class="font-bold text-amber-900 tracking-wider">MARCOS</div><div class="italic text-stone-600">(levantando la mano)</div><div class="">¡Sofía! Por aquí.</div></div><p class="mb-4 text-stone-800 leading-relaxed">Sofía se acerca rápidamente y toma asiento frente a él.</p><div class="text-center mb-4 pl-12 pr-12"><div class="font-bold text-amber-900 tracking-wider">SOFÍA</div><div class="">Dime que trajiste el borrador original.</div></div><div class="text-center mb-4 pl-12 pr-12"><div class="font-bold text-amber-900 tracking-wider">MARCOS</div><div class="">Lo tengo. Pero no te va a gustar lo que descubrí en el tercer acto.</div></div><div class="text-center mb-4 pl-12 pr-12"><div class="font-bold text-amber-900 tracking-wider">SOFÍA</div><div class="italic text-stone-600">(con una media sonrisa)</div><div class="">A los productores nunca les gusta la verdad.</div></div><p class="text-stone-800 leading-relaxed">Marcos desliza el sobre hacia el centro de la mesa. Sofía lo contempla en silencio antes de tocarlo.</p></div></div><div class="w-60 shrink-0 bg-white border-l border-stone-200 flex flex-col"><div class="px-3 py-2 border-b border-stone-200"><span class="font-bold text-[11px] text-stone-700">Inspector de Formato y Elementos</span></div><div class="flex items-center border-b border-stone-200 bg-stone-50 text-[11px] p-1 gap-1"><button class="px-2 py-1 font-bold rounded bg-brand-darkTeal text-white text-[10px]">Formato</button><button class="px-2 py-1 text-stone-600 hover:text-stone-900 text-[10px]">Personajes</button><button class="px-2 py-1 text-stone-600 hover:text-stone-900 text-[10px]">Locaciones</button><button class="px-2 py-1 text-stone-600 hover:text-stone-900 text-[10px]">Otros</button></div><div class="p-3 flex-1 overflow-y-auto space-y-4"><div class="space-y-1.5"><div class="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1">ESTILOS DE PÁRRAFO</div><div class="px-2.5 py-1.5 bg-blue-50 border-l-2 border-blue-600 text-blue-900 font-semibold rounded-r flex items-center justify-between text-[11px]"><span class="">1 Encabezado de Escena</span></div><div class="px-2.5 py-1 text-stone-700 hover:bg-stone-50 rounded text-[11px]">2 Acción</div><div class="px-2.5 py-1 text-stone-700 hover:bg-stone-50 rounded text-[11px]">3 Personaje (o Tab en línea vacía)</div><div class="px-2.5 py-1 text-stone-700 hover:bg-stone-50 rounded text-[11px]">4 Acotación / Paréntesis</div><div class="px-2.5 py-1 text-stone-700 hover:bg-stone-50 rounded text-[11px]">5 Diálogo</div><div class="px-2.5 py-1 text-stone-700 hover:bg-stone-50 rounded text-[11px]">6 Transición</div></div><div class="pt-3 border-t border-stone-100"><div class="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-2">FORMATO RÁPIDO</div><div class="grid grid-cols-4 gap-1 text-center font-bold text-stone-700"><div class="py-1 border border-stone-200 rounded hover:bg-stone-50 cursor-pointer">B</div><div class="py-1 border border-stone-200 rounded hover:bg-stone-50 cursor-pointer italic">I</div><div class="py-1 border border-stone-200 rounded hover:bg-stone-50 cursor-pointer underline">U</div><div class="py-1 border border-stone-200 rounded hover:bg-stone-50 cursor-pointer">AA</div></div></div><div class="pt-3 border-t border-stone-100"><div class="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1.5">TIPOGRAFÍA</div><div class="flex items-center justify-between border border-stone-200 rounded px-2 py-1 bg-stone-50"><span class="font-mono text-stone-800 text-[11px]">Courier Prime</span><span class="text-stone-500 font-semibold text-[10px]">12 pt</span></div></div></div></div></div><div class="bg-brand-darkTeal text-white px-3 py-1.5 text-[11px] flex items-center justify-between font-mono"><div class="flex items-center gap-4"><span class="bg-white/20 px-2 py-0.5 rounded font-bold uppercase tracking-wide">ENCABEZADO DE ESCENA</span><span class="text-white/80">Tab: Personaje | Enter en Personaje: Diálogo | Enter en Diálogo: Acción</span></div><div class="text-white/60 text-[10px]">Página 1 de 1 • UTF-8 Fountain</div></div></div></div><div class="hidden p-2 sm:p-3 bg-paper" id="mockup-image"><a class="block relative group cursor-pointer" href="https://lh3.googleusercontent.com/aida-public/AB6AXuDoXAdr5HDyD7bQ1CpKUEsTdZ3_iemvOdArk3CrDoVmOSWAZ3qjUh3n9Cd2BmvmkMAPwuwlg5glPnq2oFP1fEtj8ekONY_2bYSGLXqExX9xgaD2e60BgQILG2yU4w3rne-Xar85pwKHhxzgM4Pz6gIr9YhqbdbaFHaS7uS762LF8bnehH61YZW-k0Z6QrkiSHeZPtOpJiG41gym2rPiJ-HJ4Fi7uOX5gq8i5rEUOSWrEtC8icw4t5pa" rel="noopener noreferrer" target="_blank" title="Clic para ver captura en tamaño completo"><img alt="Interfaz oficial de usuario de Act One_ con editor de guion cinematográfico" class="w-full h-auto block rounded-lg border border-paper-border shadow-xs" height="1489" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoXAdr5HDyD7bQ1CpKUEsTdZ3_iemvOdArk3CrDoVmOSWAZ3qjUh3n9Cd2BmvmkMAPwuwlg5glPnq2oFP1fEtj8ekONY_2bYSGLXqExX9xgaD2e60BgQILG2yU4w3rne-Xar85pwKHhxzgM4Pz6gIr9YhqbdbaFHaS7uS762LF8bnehH61YZW-k0Z6QrkiSHeZPtOpJiG41gym2rPiJ-HJ4Fi7uOX5gq8i5rEUOSWrEtC8icw4t5pa" style="image-rendering: crisp-edges;" width="2559"><span class="absolute right-3 -top-3.5 bg-paper border border-paper-border text-stone-600 text-xs font-semibold px-2.5 py-1 rounded shadow-sm opacity-90 group-hover:text-brand-darkTeal transition">🔍 Clic para ampliar en alta resolución</span></a></div></div>
+</section>
+<!-- FUNCIONALIDADES PRINCIPALES -->
+<section class="py-20 px-6 bg-cream-200/60 border-y border-paper-border" id="funciones">
+<div class="max-w-6xl mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-paper-text" data-i18n="feat_title">Todo lo que exige la industria. Cero curvas de aprendizaje.</h2>
+<p class="text-paper-muted" data-i18n="feat_subtitle">Construido con arquitectura nativa de escritorio para ofrecer escritura instantánea incluso en guiones de cientos de páginas.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">Tab</div>
+<h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_1_t">Flujo Inteligente Tab / Enter</h3>
+<p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_1_d">
                         Máquina de estados contextual que conmuta de forma automática entre Personaje, Diálogo, Acotación y Acción, con auto-mayúsculas en tiempo real.
                     </p>
-                </div>
-
-                <!-- 2. Fountain 1.1 -->
-                <div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
-                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">.fn</div>
-                    <h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_2_t">Motor Nativo Fountain 1.1</h3>
-                    <p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_2_d">
+</div>
+<div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">.fn</div>
+<h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_2_t">Motor Nativo Fountain 1.1</h3>
+<p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_2_d">
                         Tus guiones te pertenecen. Abre y guarda en formato abierto .fountain o .txt, e importa documentos directamente desde Microsoft Word (.docx).
                     </p>
-                </div>
-
-                <!-- 3. Portapapeles MIME -->
-                <div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
-                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">MIME</div>
-                    <h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_3_t">Copiado y Pegado de Alta Fidelidad</h3>
-                    <p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_3_d">
+</div>
+<div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">MIME</div>
+<h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_3_t">Copiado y Pegado de Alta Fidelidad</h3>
+<p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_3_d">
                         Serialización estructurada que preserva sangrías y tipos de bloque al reordenar escenas, sin heredar negritas indebidas ni romper márgenes.
                     </p>
-                </div>
-
-                <!-- 4. Outline & Gutter -->
-                <div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
-                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">#1</div>
-                    <h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_4_t">Outline y Numeración Dinámica</h3>
-                    <p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_4_d">
+</div>
+<div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">#1</div>
+<h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_4_t">Outline y Numeración Dinámica</h3>
+<p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_4_d">
                         Panel de navegación con búsqueda reactiva en vivo, botón + Escena y numeración dibujada en el margen sin ensuciar el contenido del archivo.
                     </p>
-                </div>
-
-                <!-- 5. Enfoque y Typewriter -->
-                <div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
-                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">F11</div>
-                    <h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_5_t">Modo Enfoque y Typewriter</h3>
-                    <p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_5_d">
+</div>
+<div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">F11</div>
+<h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_5_t">Modo Enfoque y Typewriter</h3>
+<p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_5_d">
                         Maximiza tu concentración ocultando distracciones con F11 y mantén la línea activa siempre en el tercio medio vertical de la pantalla.
                     </p>
-                </div>
-
-                <!-- 6. Exportación PDF y Word -->
-                <div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
-                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">PDF</div>
-                    <h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_6_t">Exportación Profesional con Portada</h3>
-                    <p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_6_d">
+</div>
+<div class="p-6 rounded-2xl bg-white border border-paper-border hover:border-brand-darkTeal/50 transition shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-mono font-bold mb-4 border border-teal-100">PDF</div>
+<h3 class="text-lg font-bold mb-2 text-paper-text" data-i18n="feat_6_t">Exportación Profesional con Portada</h3>
+<p class="text-sm text-paper-muted leading-relaxed" data-i18n="feat_6_d">
                         Genera documentos PDF y Word (.docx) con portada formal automática, Courier 12pt monoespaciada y márgenes calibrados al milímetro.
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN SIMPLE: NAVEGACIÓN NATURAL (TAB Y ENTER) -->
-    <section id="atajos" class="py-16 px-6">
-        <div class="max-w-3xl mx-auto text-center">
-            <span class="text-brand-darkTeal font-semibold text-xs uppercase tracking-widest" data-i18n="kb_eyebrow">Flujo Natural</span>
-            <h2 class="text-3xl font-extrabold mt-2 mb-3 text-paper-text" data-i18n="kb_title">Escribe sin tocar el mouse</h2>
-            <p class="text-paper-muted text-sm max-w-xl mx-auto mb-8" data-i18n="kb_desc">
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN SIMPLE: NAVEGACIÓN NATURAL (TAB Y ENTER) -->
+<section class="py-16 px-6" id="atajos">
+<div class="max-w-3xl mx-auto text-center">
+<span class="text-brand-darkTeal font-semibold text-xs uppercase tracking-widest" data-i18n="kb_eyebrow">Flujo Natural</span>
+<h2 class="text-3xl font-extrabold mt-2 mb-3 text-paper-text" data-i18n="kb_title">Escribe sin tocar el mouse</h2>
+<p class="text-paper-muted text-sm max-w-xl mx-auto mb-8" data-i18n="kb_desc">
                 Olvida los menús de formato. Todo el guion se estructura usando únicamente dos teclas.
             </p>
-
-            <!-- Tarjeta única de dos teclas -->
-            <div class="bg-white border border-paper-border rounded-2xl p-6 sm:p-8 shadow-xs flex flex-col sm:flex-row items-center justify-around gap-6">
-                <!-- Tecla TAB -->
-                <div class="flex items-center gap-4 text-left">
-                    <span class="px-3.5 py-2 rounded-lg bg-cream-200 border border-paper-border font-mono font-bold text-sm text-brand-darkTeal shadow-xs">TAB</span>
-                    <div>
-                        <h4 class="font-bold text-sm text-stone-900" data-i18n="kb_tab_title">Personajes y Acotaciones</h4>
-                        <p class="text-xs text-paper-muted" data-i18n="kb_tab_desc">Inserta personajes en mayúsculas o abre paréntesis.</p>
-                    </div>
-                </div>
-
-                <div class="hidden sm:block w-px h-10 bg-paper-border"></div>
-
-                <!-- Tecla ENTER -->
-                <div class="flex items-center gap-4 text-left">
-                    <span class="px-3 py-2 rounded-lg bg-cream-200 border border-paper-border font-mono font-bold text-sm text-brand-darkTeal shadow-xs">ENTER</span>
-                    <div>
-                        <h4 class="font-bold text-sm text-stone-900" data-i18n="kb_enter_title">Diálogos y Acción</h4>
-                        <p class="text-xs text-paper-muted" data-i18n="kb_enter_desc">Salta de inmediato a la voz del personaje o a la escena.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: EVOLUCIÓN CONTINUA -->
-    <section id="roadmap" class="py-20 px-6 bg-cream-50 border-t border-paper-border">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="text-brand-darkTeal font-semibold text-xs uppercase tracking-widest" data-i18n="evo_eyebrow">Desarrollo Activo</span>
-                <h2 class="text-3xl font-extrabold mt-2 mb-3 text-paper-text" data-i18n="evo_title">Un proyecto en constante evolución</h2>
-                <p class="text-paper-muted text-sm" data-i18n="evo_desc">
+<div class="bg-white border border-paper-border rounded-2xl p-6 sm:p-8 shadow-xs text-center max-w-2xl mx-auto"><p class="text-stone-700 text-base sm:text-lg leading-relaxed">Con solo usar las teclas <kbd class="px-2 py-0.5 rounded bg-cream-200 border border-paper-border font-mono font-bold text-brand-darkTeal text-xs shadow-xs">TAB</kbd> y <kbd class="px-2 py-0.5 rounded bg-cream-200 border border-paper-border font-mono font-bold text-brand-darkTeal text-xs shadow-xs">ENTER</kbd> te vas a poder desplazar de forma natural e intuitiva por todos los distintos formatos y elementos del guion (encabezados, personajes, diálogos, acotaciones y acción), manteniendo siempre el ritmo de tu historia sin distraerte con menós.</p></div>
+</div>
+</section>
+<!-- SECCIÓN: EVOLUCIÓN CONTINUA -->
+<section class="py-20 px-6 bg-cream-50 border-t border-paper-border" id="roadmap">
+<div class="max-w-5xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="text-brand-darkTeal font-semibold text-xs uppercase tracking-widest" data-i18n="evo_eyebrow">Desarrollo Activo</span>
+<h2 class="text-3xl font-extrabold mt-2 mb-3 text-paper-text" data-i18n="evo_title">Un proyecto en constante evolución</h2>
+<p class="text-paper-muted text-sm" data-i18n="evo_desc">
                     Act One_ nace con una base sólida y funcional lista para escribir hoy, pero no se detiene aquí. Tu compra apoya un desarrollo independiente con actualizaciones garantizadas.
                 </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Columna 1 -->
-                <div class="p-6 rounded-2xl bg-white border border-paper-border shadow-xs flex flex-col justify-between">
-                    <div>
-                        <div class="w-8 h-8 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-bold text-sm mb-4 border border-teal-100">01</div>
-                        <h4 class="font-bold text-base text-paper-text mb-2" data-i18n="evo_1_t">Base Sólida Hoy</h4>
-                        <p class="text-xs text-paper-muted leading-relaxed mb-4" data-i18n="evo_1_d">
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="p-6 rounded-2xl bg-white border border-paper-border shadow-xs flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-bold text-sm mb-4 border border-teal-100">01</div>
+<h4 class="font-bold text-base text-paper-text mb-2" data-i18n="evo_1_t">Base Sólida Hoy</h4>
+<p class="text-xs text-paper-muted leading-relaxed mb-4" data-i18n="evo_1_d">
                             Todo lo esencial para escribir cine sin fricción: motor Fountain 1.1, atajos inteligentes Tab/Enter, inspector de personajes/locaciones y exportador fiel a PDF y Word.
                         </p>
-                    </div>
-                    <div>
-                        <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200" data-i18n="evo_1_tag">Disponible y listo para usar</span>
-                    </div>
-                </div>
-
-                <!-- Columna 2 -->
-                <div class="p-6 rounded-2xl bg-white border border-paper-border shadow-xs flex flex-col justify-between">
-                    <div>
-                        <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center font-bold text-sm mb-4 border border-amber-100">02</div>
-                        <h4 class="font-bold text-base text-paper-text mb-2" data-i18n="evo_2_t">Futuras Mejoras en Estudio</h4>
-                        <p class="text-xs text-paper-muted leading-relaxed mb-4" data-i18n="evo_2_d">
+</div>
+<div>
+<span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200" data-i18n="evo_1_tag">Disponible y listo para usar</span>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-white border border-paper-border shadow-xs flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center font-bold text-sm mb-4 border border-amber-100">02</div>
+<h4 class="font-bold text-base text-paper-text mb-2" data-i18n="evo_2_t">Futuras Mejoras en Estudio</h4>
+<p class="text-xs text-paper-muted leading-relaxed mb-4" data-i18n="evo_2_d">
                             Exploramos e incorporamos mejoras sugeridas por la comunidad: herramientas de asistencia contextual, diálogo simultáneo, organización visual de escenas y mayor compatibilidad de formatos.
                         </p>
-                    </div>
-                    <div>
-                        <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200" data-i18n="evo_2_tag">En investigación y prototipado</span>
-                    </div>
-                </div>
-
-                <!-- Columna 3 -->
-                <div class="p-6 rounded-2xl bg-white border-2 border-brand-darkTeal shadow-xs flex flex-col justify-between">
-                    <div>
-                        <div class="w-8 h-8 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-bold text-sm mb-4 border border-teal-100">03</div>
-                        <h4 class="font-bold text-base text-paper-text mb-2" data-i18n="evo_3_t">Compromiso Early Bird Total</h4>
-                        <p class="text-xs text-paper-muted leading-relaxed mb-4" data-i18n="evo_3_d">
+</div>
+<div>
+<span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200" data-i18n="evo_2_tag">En investigación y prototipado</span>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-white shadow-xs flex flex-col justify-between border border-paper-border">
+<div>
+<div class="w-8 h-8 rounded-lg bg-teal-50 text-brand-darkTeal flex items-center justify-center font-bold text-sm mb-4 border border-teal-100">03</div>
+<h4 class="font-bold text-base text-paper-text mb-2" data-i18n="evo_3_t">Compromiso Early Bird Total</h4>
+<p class="text-xs text-paper-muted leading-relaxed mb-4" data-i18n="evo_3_d">
                             La tranquilidad de comprar una sola vez: tu clave Early Bird te da acceso a todas las mejoras continuas de la <strong>serie 1.x</strong> y te garantiza el salto gratuito a la futura <strong>versión 2.x</strong>.
                         </p>
-                    </div>
-                    <div>
-                        <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-bold bg-teal-100 text-brand-darkTeal border border-teal-200" data-i18n="evo_3_tag">Versiones 1.x y 2.x Cubiertas</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-8 text-center text-xs text-paper-muted bg-cream-200/50 py-3 px-6 rounded-xl border border-paper-border max-w-2xl mx-auto" data-i18n="evo_footer_note">
+</div>
+<div>
+<span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-bold bg-teal-100 text-brand-darkTeal border border-teal-200" data-i18n="evo_3_tag">Versiones 1.x y 2.x Cubiertas</span>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center text-xs text-paper-muted bg-cream-200/50 py-3 px-6 rounded-xl border border-paper-border max-w-2xl mx-auto" data-i18n="evo_footer_note">
                 💡 <strong>Licencia de Fundador:</strong> Apoyas el nacimiento de la herramienta y te aseguras el software para siempre sin tarifas de actualización.
             </div>
-        </div>
-    </section>
+</div>
+</section>
+<!-- TABLA COMPARATIVA -->
 
-    <!-- TABLA COMPARATIVA -->
-    <section id="comparativa" class="py-20 px-6 bg-cream-200/60 border-y border-paper-border">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="text-brand-darkTeal font-semibold text-xs uppercase tracking-widest" data-i18n="comp_eyebrow">Comparativa Directa</span>
-                <h2 class="text-3xl font-extrabold mt-2 mb-3 text-paper-text" data-i18n="comp_title">¿Por qué elegir Act One_?</h2>
-                <p class="text-paper-muted text-sm" data-i18n="comp_desc">Libertad, privacidad y precio justo frente a los modelos anticuados del sector.</p>
-            </div>
-
-            <div class="overflow-x-auto bg-white rounded-2xl border border-paper-border shadow-xs">
-                <table class="w-full text-left text-sm border-collapse">
-                    <thead>
-                        <tr class="border-b border-paper-border text-paper-muted">
-                            <th class="py-4 px-6 font-semibold" data-i18n="comp_th_feature">Característica</th>
-                            <th class="py-4 px-6 font-bold text-brand-darkTeal bg-teal-50/60">Act One_</th>
-                            <th class="py-4 px-6 font-semibold">Fade In</th>
-                            <th class="py-4 px-6 font-semibold">Final Draft</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-paper-border text-stone-700">
-                        <tr>
-                            <td class="py-4 px-6 font-medium" data-i18n="comp_r1_c1">Modelo de Precio</td>
-                            <td class="py-4 px-6 font-bold text-brand-darkTeal bg-teal-50/60" data-i18n="comp_r1_c2">$10 USD (Early Bird)</td>
-                            <td class="py-4 px-6">$80 USD</td>
-                            <td class="py-4 px-6">$200+ USD</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-6 font-medium" data-i18n="comp_r2_c1">Suscripción recurrente</td>
-                            <td class="py-4 px-6 font-bold text-brand-darkTeal bg-teal-50/60" data-i18n="comp_r2_c2">Nunca (Pago Único)</td>
-                            <td class="py-4 px-6" data-i18n="comp_no">No</td>
-                            <td class="py-4 px-6" data-i18n="comp_r2_c4">Actualizaciones de pago</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-6 font-medium" data-i18n="comp_r3_c1">Actualización a Versión 2.x</td>
-                            <td class="py-4 px-6 font-bold text-brand-darkTeal bg-teal-50/60" data-i18n="comp_r3_c2">100% Incluida (Early Bird)</td>
-                            <td class="py-4 px-6" data-i18n="comp_r3_c3">Incluida de por vida</td>
-                            <td class="py-4 px-6" data-i18n="comp_r3_c4">De pago ($100 USD c/u)</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-6 font-medium" data-i18n="comp_r4_c1">Privacidad y Almacenamiento</td>
-                            <td class="py-4 px-6 font-bold text-stone-900 bg-teal-50/60" data-i18n="comp_r4_c2">100% Offline (Local)</td>
-                            <td class="py-4 px-6">Offline</td>
-                            <td class="py-4 px-6" data-i18n="comp_r4_c4">Enfoque en Nube</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-6 font-medium" data-i18n="comp_r5_c1">Formato Base</td>
-                            <td class="py-4 px-6 bg-teal-50/60 text-stone-800">Fountain 1.1</td>
-                            <td class="py-4 px-6" data-i18n="comp_r5_c3">XML Propietario</td>
-                            <td class="py-4 px-6" data-i18n="comp_r5_c4">FDX Propietario</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-6 font-medium" data-i18n="comp_r6_c1">Soporte Nativo Español / Inglés</td>
-                            <td class="py-4 px-6 font-bold text-brand-darkTeal bg-teal-50/60" data-i18n="comp_r6_c2">Sí (Conmutación en vivo)</td>
-                            <td class="py-4 px-6" data-i18n="comp_r6_c3">Parcial</td>
-                            <td class="py-4 px-6" data-i18n="comp_r6_c4">Inglés predominante</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-6 font-medium" data-i18n="comp_r7_c1">Evolución y mejoras futuras</td>
-                            <td class="py-4 px-6 font-bold text-brand-darkTeal bg-teal-50/60" data-i18n="comp_r7_c2">Desarrollo activo continuo</td>
-                            <td class="py-4 px-6" data-i18n="comp_r7_c3">Estable</td>
-                            <td class="py-4 px-6" data-i18n="comp_r7_c4">Versiones anuales</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRECIOS Y DESCARGA (DEMO VS PRO) -->
-    <section id="precios" class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-brand-darkTeal text-xs font-bold uppercase tracking-wider" data-i18n="pricing_badge">Instalador Único • Sin sorpresas</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold mt-4 mb-3 text-paper-text" data-i18n="pricing_title">Empieza gratis. Desbloquea para siempre.</h2>
-                <p class="text-paper-muted text-sm sm:text-base" data-i18n="pricing_subtitle">
+<!-- PRECIOS Y DESCARGA (DEMO VS PRO) -->
+<section class="py-20 px-6" id="precios">
+<div class="max-w-5xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-brand-darkTeal text-xs font-bold uppercase tracking-wider" data-i18n="pricing_badge">Instalador Único • Sin sorpresas</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold mt-4 mb-3 text-paper-text" data-i18n="pricing_title">Empieza gratis. Desbloquea para siempre.</h2>
+<p class="text-paper-muted text-sm sm:text-base" data-i18n="pricing_subtitle">
                     Descarga la demo y escribe hasta 10 páginas. Cuando quieras continuar, adquiere tu clave Pro con precio <strong>Early Bird hasta el 31/12</strong> con versiones 1.x y 2.x incluidas.
                 </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 items-stretch">
-                <!-- TARJETA DEMO -->
-                <div class="rounded-2xl bg-white border border-paper-border p-8 flex flex-col justify-between shadow-sm">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-paper-text" data-i18n="card_demo_title">Versión DEMO</h3>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-cream-200 text-stone-600" data-i18n="card_demo_tag">Evaluación Gratuita</span>
-                        </div>
-                        <div class="mb-6">
-                            <span class="text-4xl font-extrabold text-paper-text">$0</span>
-                            <span class="text-paper-muted text-sm ml-1" data-i18n="card_demo_price_sub">USD • Descarga libre</span>
-                        </div>
-                        <p class="text-sm text-paper-muted mb-6" data-i18n="card_demo_desc">
+</div>
+<div class="grid md:grid-cols-2 gap-8 items-stretch">
+<!-- TARJETA DEMO -->
+<div class="rounded-2xl bg-white border border-paper-border p-8 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xl font-bold text-paper-text" data-i18n="card_demo_title">Versión DEMO</h3>
+<span class="text-xs font-semibold px-2.5 py-1 rounded bg-cream-200 text-stone-600" data-i18n="card_demo_tag">Evaluación Gratuita</span>
+</div>
+<div class="mb-6">
+<span class="text-4xl font-extrabold text-paper-text">$0</span>
+<span class="text-paper-muted text-sm ml-1" data-i18n="card_demo_price_sub">USD • Descarga libre</span>
+</div>
+<p class="text-sm text-paper-muted mb-6" data-i18n="card_demo_desc">
                             Escribe tus primeras 10 páginas y prueba toda la fluidez del teclado sin ingresar ningún dato de pago.
                         </p>
-                        <ul class="space-y-3 text-sm text-stone-700 mb-8">
-                            <li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <span data-i18n="card_demo_item1">Hasta <strong>10 páginas (~550 líneas)</strong></span></li>
-                            <li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <span data-i18n="card_demo_item2">Flujo Tab/Enter y sintaxis Fountain 1.1</span></li>
-                            <li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <span data-i18n="card_demo_item3">Guardado libre de archivos (<code>.fountain</code>)</span></li>
-                            <li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <span data-i18n="card_demo_item4">Modo Enfoque (F11), Typewriter y Temas</span></li>
-                            <li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <span data-i18n="card_demo_item5">Exportación PDF/Word (con pie de página demo)</span></li>
-                        </ul>
-                    </div>
-                    <!-- REEMPLAZAR '#' CON LINK DE LA DEMO -->
-                    <a href="#" class="w-full py-3.5 px-6 rounded-xl text-center font-bold bg-cream-200 hover:bg-cream-300 text-paper-text border border-paper-border transition" data-i18n="btn_download_demo">
+<ul class="space-y-3 text-sm text-stone-700 mb-8">
+<li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <span class="" data-i18n="card_demo_item1">Hasta <strong>10 páginas (~550 líneas)</strong></span></li>
+<li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <span class="" data-i18n="card_demo_item2">Flujo Tab/Enter y sintaxis Fountain 1.1</span></li>
+<li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <span class="" data-i18n="card_demo_item3">Guardado libre de archivos (<code>.fountain</code>)</span></li>
+<li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <span class="" data-i18n="card_demo_item4">Modo Enfoque (F11), Typewriter y Temas</span></li>
+<li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <span class="" data-i18n="card_demo_item5">Exportación PDF/Word (con pie de página demo)</span></li>
+</ul>
+</div>
+<a class="w-full py-3.5 px-6 rounded-xl text-center font-bold bg-cream-200 hover:bg-cream-300 text-paper-text border border-paper-border transition" data-i18n="btn_download_demo" href="#">
                         Descargar Versión DEMO (.exe)
                     </a>
-                </div>
-
-                <!-- TARJETA PRO (LEMON SQUEEZY) -->
-                <div class="rounded-2xl bg-white border-2 border-brand-darkTeal p-8 flex flex-col justify-between relative shadow-xl shadow-teal-900/5">
-                    <div class="absolute -top-3.5 right-6 bg-brand-darkTeal text-white text-xs font-extrabold uppercase px-3 py-1 rounded-full shadow-xs" data-i18n="card_pro_badge">
+</div>
+<!-- TARJETA PRO (LEMON SQUEEZY) -->
+<div class="rounded-2xl bg-white border-2 border-brand-darkTeal p-8 flex flex-col justify-between relative shadow-xl shadow-teal-900/5">
+<div class="absolute -top-3.5 right-6 bg-brand-darkTeal text-white text-xs font-extrabold uppercase px-3 py-1 rounded-full shadow-xs" data-i18n="card_pro_badge">
                         Early Bird hasta el 31/12
                     </div>
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-paper-text">Act One_ Pro</h3>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-teal-100 text-brand-darkTeal" data-i18n="card_pro_tag">Licencia Fundador</span>
-                        </div>
-                        <div class="mb-6 flex items-baseline gap-3">
-                            <span class="text-5xl font-extrabold text-paper-text">$10</span>
-                            <span class="text-paper-muted text-sm" data-i18n="card_pro_price_sub">USD • Pago único de por vida</span>
-                            <span class="text-stone-400 line-through text-sm">$29 USD</span>
-                        </div>
-                        <p class="text-sm text-paper-muted mb-6" data-i18n="card_pro_desc">
-                            Recibe tu serial <code>ACT1-XXXX-XXXX-XXXX</code> al instante y asegura tu software hoy y para la próxima gran versión.
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xl font-bold text-paper-text">Act One_ Pro</h3>
+<span class="text-xs font-semibold px-2.5 py-1 rounded bg-teal-100 text-brand-darkTeal" data-i18n="card_pro_tag">Licencia Fundador</span>
+</div>
+<div class="mb-6 flex items-baseline gap-3">
+<span class="text-5xl font-extrabold text-paper-text">$15</span>
+<span class="text-paper-muted text-sm" data-i18n="card_pro_price_sub">USD • Pago único de por vida</span>
+<span class="text-stone-400 line-through text-sm">$29 USD</span>
+</div>
+<p class="text-sm text-paper-muted mb-6" data-i18n="card_pro_desc">
+                            Recibe tu licencia al instante y asegura tu software hoy y para las próximas versiones.
                         </p>
-                        <ul class="space-y-3 text-sm text-stone-700 mb-8">
-                            <li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <strong data-i18n="card_pro_item1">Páginas y escenas ilimitadas</strong></li>
-                            <li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <strong data-i18n="card_pro_item2">Exportación PDF y Word limpia (sin marcas)</strong></li>
-                            <li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <strong data-i18n="card_pro_item3">Inspector Completo (Personajes, Locaciones, Métricas)</strong></li>
-                            <li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <strong data-i18n="card_pro_item4">Módulo de Estadísticas y Reportes Ejecutivos</strong></li>
-                            <li class="flex items-center gap-2.5"><span class="text-brand-teal font-bold">★</span> <strong data-i18n="card_pro_item5">Incluye todas las versiones 1.x y el pase a la v2.x</strong></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <!-- REEMPLAZAR '#' CON LINK DE CHECKOUT DE LEMON SQUEEZY -->
-                        <a href="#" class="block w-full py-4 px-6 rounded-xl text-center font-extrabold bg-brand-darkTeal hover:bg-brand-teal text-white transition shadow-md shadow-teal-900/15" data-i18n="btn_buy_lemon">
-                            Comprar Licencia en Lemon Squeezy — $10 USD
+<ul class="space-y-3 text-sm text-stone-700 mb-8">
+<li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <strong data-i18n="card_pro_item1">Páginas y escenas ilimitadas</strong></li>
+<li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <strong data-i18n="card_pro_item2">Exportación PDF y Word limpia (sin marcas)</strong></li>
+<li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <strong data-i18n="card_pro_item3">Inspector Completo (Personajes, Locaciones, Métricas)</strong></li>
+<li class="flex items-center gap-2.5"><span class="text-brand-darkTeal font-bold">✓</span> <strong data-i18n="card_pro_item4">Módulo de Estadísticas y Reportes Ejecutivos</strong></li>
+<li class="flex items-center gap-2.5"><span class="text-brand-teal font-bold">★</span> <strong data-i18n="card_pro_item5">Incluye todas las versiones 1.x y el pase a la v2.x</strong></li>
+</ul>
+</div>
+<div>
+<a class="block w-full py-4 px-6 rounded-xl text-center font-extrabold bg-brand-darkTeal hover:bg-brand-teal text-white transition shadow-md shadow-teal-900/15" data-i18n="btn_buy_lemon" href="#">
+                            Comprar Licencia — $15 USD
                         </a>
-                        <p class="text-[11px] text-center text-paper-muted mt-3" data-i18n="card_pro_security">
+<p class="text-[11px] text-center text-paper-muted mt-3" data-i18n="card_pro_security">
                             🔒 Checkout oficial Lemon Squeezy • Entrega inmediata por correo.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PREGUNTAS FRECUENTES (FAQ) -->
-    <section id="faq" class="py-20 px-6 bg-cream-200/60 border-t border-paper-border">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold mb-3 text-paper-text" data-i18n="faq_title">Preguntas Frecuentes</h2>
-                <p class="text-paper-muted text-sm" data-i18n="faq_subtitle">Todo lo que necesitas saber sobre la herramienta y las licencias.</p>
-            </div>
-
-            <div class="space-y-4">
-                <details class="group p-5 rounded-xl bg-white border border-paper-border shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-paper-text">
-                        <span data-i18n="faq_q1">¿Tendré que volver a pagar cuando se lance la Versión 2.0?</span>
-                        <span class="text-brand-darkTeal group-open:rotate-180 transition">▼</span>
-                    </summary>
-                    <p class="mt-3 text-sm text-paper-muted leading-relaxed" data-i18n="faq_a1">
-                        <strong>No.</strong> Como parte del compromiso con los primeros usuarios (Early Bird), tu clave de activación es válida de por vida para toda la serie 1.x y te otorgará actualización automática a la futura <strong>Versión 2.x</strong> sin tener que abonar ninguna tarifa de actualización.
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PREGUNTAS FRECUENTES (FAQ) -->
+<section class="py-20 px-6 bg-cream-200/60 border-t border-paper-border" id="faq">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-extrabold mb-3 text-paper-text" data-i18n="faq_title">Preguntas Frecuentes</h2>
+<p class="text-paper-muted text-sm" data-i18n="faq_subtitle">Todo lo que necesitas saber sobre la herramienta y las licencias.</p>
+</div>
+<div class="space-y-4">
+<details class="group p-5 rounded-xl bg-white border border-paper-border shadow-xs [&amp;_summary::-webkit-details-marker]:hidden" open="">
+<summary class="flex items-center justify-between cursor-pointer font-semibold text-paper-text">
+<span class="" data-i18n="faq_q1">¿Tendré que volver a pagar cuando se lance la Versión 2.0?</span>
+<span class="text-brand-darkTeal group-open:rotate-180 transition">▼</span>
+</summary>
+<p class="mt-3 text-sm text-paper-muted leading-relaxed" data-i18n="faq_a1">
+<strong>No.</strong> Como parte del compromiso con los primeros usuarios (Early Bird), tu clave de activación es válida de por vida para toda la serie 1.x y te otorgará actualización automática a la futura <strong>Versión 2.x</strong> sin tener que abonar ninguna tarifa de actualización.
                     </p>
-                </details>
-
-                <details class="group p-5 rounded-xl bg-white border border-paper-border shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-paper-text">
-                        <span data-i18n="faq_q2">¿Qué ocurre cuando llego al límite de 10 páginas en la versión Demo?</span>
-                        <span class="text-brand-darkTeal group-open:rotate-180 transition">▼</span>
-                    </summary>
-                    <p class="mt-3 text-sm text-paper-muted leading-relaxed" data-i18n="faq_a2">
-                        El programa pausa la adición de texto nuevo, pero <strong>siempre te permite guardar tu archivo</strong> (.fountain) o borrar líneas. Al adquirir la clave Pro, solo vas a <code>Ayuda -> Activar Act One_...</code>, pegas el serial y continúas escribiendo al segundo sin perder nada.
+</details>
+<details class="group p-5 rounded-xl bg-white border border-paper-border shadow-xs [&amp;_summary::-webkit-details-marker]:hidden" open="">
+<summary class="flex items-center justify-between cursor-pointer font-semibold text-paper-text">
+<span class="" data-i18n="faq_q2">¿Qué ocurre cuando llego al límite de 10 páginas en la versión Demo?</span>
+<span class="text-brand-darkTeal group-open:rotate-180 transition">▼</span>
+</summary>
+<p class="mt-3 text-sm text-paper-muted leading-relaxed" data-i18n="faq_a2">
+                        El programa pausa la adición de texto nuevo, pero <strong>siempre te permite guardar tu archivo</strong> (.fountain) o borrar líneas. Al adquirir la clave Pro, solo vas a <code>Ayuda -&gt; Activar Act One_...</code>, pegas el serial y continúas escribiendo al segundo sin perder nada.
                     </p>
-                </details>
-
-                <details class="group p-5 rounded-xl bg-white border border-paper-border shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-paper-text">
-                        <span data-i18n="faq_q3">¿Necesito conexión a internet para escribir o validar el software?</span>
-                        <span class="text-brand-darkTeal group-open:rotate-180 transition">▼</span>
-                    </summary>
-                    <p class="mt-3 text-sm text-paper-muted leading-relaxed" data-i18n="faq_a3">
-                        No. Act One_ es un ejecutable nativo de escritorio 100% offline. Tu trabajo vive en tu disco duro y la validación de la licencia utiliza un motor que no requiere conexión continua.
-                    </p>
-                </details>
-
-                <details class="group p-5 rounded-xl bg-white border border-paper-border shadow-xs [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-paper-text">
-                        <span data-i18n="faq_q4">¿Puedo abrir guiones creados en otros programas como Final Draft o Word?</span>
-                        <span class="text-brand-darkTeal group-open:rotate-180 transition">▼</span>
-                    </summary>
-                    <p class="mt-3 text-sm text-paper-muted leading-relaxed" data-i18n="faq_a4">
+</details>
+<details class="group p-5 rounded-xl bg-white border border-paper-border shadow-xs [&amp;_summary::-webkit-details-marker]:hidden" open="">
+<summary class="flex items-center justify-between cursor-pointer font-semibold text-paper-text">
+<span class="" data-i18n="faq_q3">¿Necesito conexión a internet para escribir o validar el software?</span>
+<span class="text-brand-darkTeal group-open:rotate-180 transition">▼</span>
+</summary>
+<p class="mt-3 text-sm text-paper-muted leading-relaxed" data-i18n="faq_a3">No. Act One_ es un ejecutable nativo de escritorio 100% offline. Tu trabajo vive en tu disco duro. Solo necesitas una mínima conexión a internet al momento de registrarte por primera vez para activar la licencia; a partir de allí, el software funciona completamente desconectado sin requerir conexión continua.</p>
+</details>
+<details class="group p-5 rounded-xl bg-white border border-paper-border shadow-xs [&amp;_summary::-webkit-details-marker]:hidden" open="">
+<summary class="flex items-center justify-between cursor-pointer font-semibold text-paper-text">
+<span class="" data-i18n="faq_q4">¿Puedo abrir guiones creados en otros programas como Final Draft o Word?</span>
+<span class="text-brand-darkTeal group-open:rotate-180 transition">▼</span>
+</summary>
+<p class="mt-3 text-sm text-paper-muted leading-relaxed" data-i18n="faq_a4">
                         Sí. Puedes abrir cualquier archivo de texto plano o Fountain (.fountain, .spmd, .txt) e importar documentos formateados directamente desde Microsoft Word (.docx).
                     </p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- APARTADO FINAL: SOBRE EL AUTOR / INTENCIONES (CON IDENTIDAD DE ARGENTINA) -->
-    <section id="about" class="py-20 px-6 bg-cream-50 border-t border-paper-border">
-        <div class="max-w-3xl mx-auto">
-            
-            <div class="text-center max-w-xl mx-auto mb-10">
-                <span class="text-brand-darkTeal font-semibold text-xs uppercase tracking-widest" data-i18n="about_badge">Detrás del Proyecto</span>
-                <h2 class="text-3xl font-extrabold mt-2 mb-2 text-paper-text" data-i18n="about_title">Intenciones</h2>
-                <p class="text-paper-muted text-sm" data-i18n="about_subtitle">Por qué existe Act One_ y para quién está pensada.</p>
-            </div>
-
-            <div class="bg-white rounded-2xl border border-paper-border p-8 sm:p-10 shadow-xs text-stone-700 leading-relaxed text-sm sm:text-base space-y-5">
-                
-                <!-- Encabezado con inicial y origen -->
-                <div class="flex items-center gap-4 pb-6 border-b border-paper-border">
-                    <div class="w-12 h-12 rounded-full bg-cream-200 border border-paper-border flex items-center justify-center font-mono font-bold text-lg text-brand-darkTeal shrink-0">
+</details>
+</div>
+</div>
+</section>
+<!-- APARTADO FINAL: SOBRE EL AUTOR / INTENCIONES -->
+<section class="py-20 px-6 bg-cream-50 border-t border-paper-border" id="about">
+<div class="max-w-3xl mx-auto">
+<div class="text-center max-w-xl mx-auto mb-10">
+<span class="text-brand-darkTeal font-semibold text-xs uppercase tracking-widest" data-i18n="about_badge">Detrás del Proyecto</span>
+<h2 class="text-3xl font-extrabold mt-2 mb-2 text-paper-text" data-i18n="about_title">Intenciones</h2>
+<p class="text-paper-muted text-sm" data-i18n="about_subtitle">Por qué existe Act One_ y para quién está pensada.</p>
+</div>
+<div class="bg-white rounded-2xl border border-paper-border p-8 sm:p-10 shadow-xs text-stone-700 leading-relaxed text-sm sm:text-base space-y-5">
+<div class="flex items-center gap-4 pb-6 border-b border-paper-border">
+<div class="w-12 h-12 rounded-full bg-cream-200 border border-paper-border flex items-center justify-center font-mono font-bold text-lg text-brand-darkTeal shrink-0">
                         F
                     </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-stone-900" data-i18n="about_author_title">¡Hola, soy Fabián!</h3>
-                        <p class="text-xs text-paper-muted" data-i18n="about_author_sub">Creador de Act One_ • Desarrollado desde Argentina 🇦🇷</p>
-                    </div>
-                </div>
-
-                <!-- Tu texto con la mención a Argentina -->
-                <p data-i18n="about_p1">
+<div>
+<h3 class="text-lg font-bold text-stone-900" data-i18n="about_author_title">¡Hola, soy Fabián!</h3>
+<p class="text-xs text-paper-muted" data-i18n="about_author_sub">Creador de Act One_ • Desarrollado desde Argentina 🇦🇷</p>
+</div>
+</div>
+<p class="" data-i18n="about_p1">
                     Soy de Argentina, me apasiona el cine y disfruto mucho sentarme a escribir historias. Pero cada vez que quería ponerme a trabajar en un guion, me chocaba con las mismas incomodidades: desde este rincón del mundo, las herramientas que usa la industria son ridículamente caras en dólares y el proceso se vuelve pesado.
                 </p>
-
-                <p data-i18n="about_p2">
+<p class="" data-i18n="about_p2">
                     Tener que pagar suscripciones todos los meses, lidiar con programas llenos de botones que nadie usa o depender de una conexión a internet solo para abrir tus propios textos me parecía absurdo y desgastante.
                 </p>
-
-                <p class="font-medium text-stone-900" data-i18n="about_p3">
+<p class="font-medium text-stone-900" data-i18n="about_p3">
                     Por eso empecé a armar Act One_.
                 </p>
-
-                <p data-i18n="about_p4">
+<p class="" data-i18n="about_p4">
                     Al principio la creé pura y exclusivamente para mí: quería algo básico, ágil y sin rodeos. Un programa que abriera al segundo, que me formateara las escenas y los diálogos mientras tecleaba, y que me dejara guardar o exportar a PDF y Word con los márgenes que pide el medio.
                 </p>
-
-                <p data-i18n="about_p5">
+<p class="" data-i18n="about_p5">
                     Después de usarla y ver lo cómoda que resultó ser, decidí pulirla y compartirla con el resto. Sé lo difícil que es arrancar un proyecto independiente, así que la idea es ofrecerla a un precio accesible y justo, con un pago único y sin letras chicas.
                 </p>
-
-                <p data-i18n="about_p6">
+<p class="" data-i18n="about_p6">
                     Escribir una historia ya tiene bastantes desafíos por sí solo; el software tiene que estar para acompañarte, no para complicarte la vida.
                 </p>
-
-                <!-- Cierre con firma -->
-                <div class="pt-6 border-t border-paper-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <p class="text-sm font-semibold text-brand-darkTeal italic" data-i18n="about_sign">
+<div class="pt-6 border-t border-paper-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<p class="text-sm font-semibold text-brand-darkTeal italic" data-i18n="about_sign">
                         «Espero que disfruten esta herramienta y les sea de mucha utilidad.»
                     </p>
-                    <!-- REEMPLAZAR CON TU MAIL DE CONTACTO -->
-                    <a href="mailto:tu-correo@gmail.com" class="text-xs font-semibold text-stone-600 hover:text-brand-darkTeal underline transition shrink-0" data-i18n="about_contact">
+<a class="text-xs font-semibold text-stone-600 hover:text-brand-darkTeal underline transition shrink-0" data-i18n="about_contact" href="mailto:tu-correo@gmail.com">
                         Escribir a Fabián →
                     </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- PIE DE PÁGINA -->
-    <footer class="py-10 px-6 border-t border-paper-border text-center text-xs text-paper-muted bg-cream-100">
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2 font-bold text-paper-text">
-                <span class="bg-brand-darkTeal text-white px-1.5 py-0.5 rounded font-mono">A1_</span>
-                <span>Act One_</span>
-            </div>
-            <p data-i18n="footer_rights">© 2026  — Act One_. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- SCRIPT DE TRADUCCIÓN DINÁMICA (ES / EN) -->
-    <script>
+</div>
+</div>
+</div>
+</section>
+<!-- PIE DE PÁGINA -->
+<footer class="py-10 px-6 border-t border-paper-border text-center text-xs text-paper-muted bg-cream-100">
+<div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 font-bold text-paper-text">
+<span class="bg-brand-darkTeal text-white px-1.5 py-0.5 rounded font-mono">A1_</span>
+<span class="">Act One_</span>
+</div>
+<p class="" data-i18n="footer_rights">© 2026 — Act One_. Todos los derechos reservados.</p>
+</div>
+</footer>
+<!-- SCRIPT DE TRADUCCIÓN DINÁMICA (ES / EN) -->
+<script>
         const translations = {
             es: {
-                announcement: "<strong>Oferta Fundador (Early Bird):</strong> Licencia Pro por solo <strong>$10 USD</strong> hasta el 31/12 (Incluye versiones 1.x y la futura 2.x).",
+                announcement: "<strong>Oferta Fundador (Early Bird):</strong> Licencia Pro por solo <strong>$15 USD</strong> hasta el 31/12 (Incluye versiones 1.x y la futura 2.x).",
                 announcement_link: "Aprovechar oferta →",
                 nav_features: "Funcionalidades",
                 nav_keyboard: "Flujo de Escritura",
@@ -624,23 +417,15 @@
                 nav_about: "Intenciones",
                 nav_pricing: "Precios",
                 btn_demo: "Descargar Demo",
-                btn_buy_top: "Comprar Pro ($10)",
+                btn_buy_top: "Comprar Pro ($15)",
                 hero_badge: "Windows 10/11 • 100% Offline • Formato Fountain 1.1",
                 hero_title_1: "Escribe cine.",
                 hero_title_2: "Simple. Sin distracciones.",
                 hero_desc: "El entorno de guion cinematográfico ágil, privado y de <strong>pago único</strong>. Tu pase Early Bird te da acceso inmediato a la versión 1.0 y asegura tu actualización a la versión 2.0 sin costos extra.",
                 hero_btn_demo: "Descargar Versión DEMO Gratis",
-                hero_btn_buy: "Comprar Licencia Pro — $10 USD",
+                hero_btn_buy: "Comprar Licencia Pro — $15 USD",
                 hero_badge_buy: "Early Bird (v1 + v2)",
                 hero_subtext: "Instalador autónomo para Windows • Prueba gratis hasta 10 páginas • Desbloqueo sin reinstalar.",
-                mock_scenes_title: "Escenas (3)",
-                mock_filter_placeholder: "🔍 Filtrar escenas...",
-                mock_script_action: "Silencio absoluto. Las pantallas parpadean proyectando una luz tenue sobre la consola.",
-                mock_script_paren: "(observando el mapa)",
-                mock_script_dialogue: "Todo el guion está guardado en local. Sin suscripciones ni cobros recurrentes de versiones.",
-                mock_inspector_title: "Inspector (Personajes)",
-                mock_martin_lines: "38 intervenciones",
-                mock_lucia_lines: "22 intervenciones",
                 feat_title: "Todo lo que exige la industria. Cero curvas de aprendizaje.",
                 feat_subtitle: "Construido con arquitectura nativa de escritorio para ofrecer escritura instantánea incluso en guiones de cientos de páginas.",
                 feat_1_t: "Flujo Inteligente Tab / Enter",
@@ -680,7 +465,7 @@
                 comp_desc: "Libertad, privacidad y precio justo frente a los modelos anticuados del sector.",
                 comp_th_feature: "Característica",
                 comp_r1_c1: "Modelo de Precio",
-                comp_r1_c2: "$10 USD (Early Bird)",
+                comp_r1_c2: "$15 USD (Early Bird)",
                 comp_r2_c1: "Suscripción recurrente",
                 comp_r2_c2: "Nunca (Pago Único)",
                 comp_no: "No",
@@ -719,13 +504,13 @@
                 card_pro_badge: "Early Bird hasta el 31/12",
                 card_pro_tag: "Licencia Fundador",
                 card_pro_price_sub: "USD • Pago único de por vida",
-                card_pro_desc: "Recibe tu serial ACT1-XXXX-XXXX-XXXX al instante y asegura tu software hoy y para la próxima gran versión.",
+                card_pro_desc: "Recibe tu serial al instante y asegura tu software hoy y para la próxima gran versión.",
                 card_pro_item1: "Páginas y escenas ilimitadas",
                 card_pro_item2: "Exportación PDF y Word limpia (sin marcas)",
                 card_pro_item3: "Inspector Completo (Personajes, Locaciones, Métricas)",
                 card_pro_item4: "Módulo de Estadísticas y Reportes Ejecutivos",
                 card_pro_item5: "Incluye todas las versiones 1.x y el pase a la v2.x",
-                btn_buy_lemon: "Comprar Licencia en Lemon Squeezy — $10 USD",
+                btn_buy_lemon: "Comprar Licencia — $15 USD",
                 card_pro_security: "🔒 Checkout oficial Lemon Squeezy • Entrega inmediata por correo.",
                 faq_title: "Preguntas Frecuentes",
                 faq_subtitle: "Todo lo que necesitas saber sobre la herramienta y las licencias.",
@@ -753,7 +538,7 @@
                 footer_rights: "© 2026 — Act One_. Todos los derechos reservados."
             },
             en: {
-                announcement: "<strong>Founder Offer (Early Bird):</strong> Pro License for just <strong>$10 USD</strong> until 12/31 (Includes v1.x and future v2.x).",
+                announcement: "<strong>Founder Offer (Early Bird):</strong> Pro License for just <strong>$15 USD</strong> until 12/31 (Includes v1.x and future v2.x).",
                 announcement_link: "Claim discount →",
                 nav_features: "Features",
                 nav_keyboard: "Keyboard Flow",
@@ -762,23 +547,15 @@
                 nav_about: "Manifesto",
                 nav_pricing: "Pricing",
                 btn_demo: "Download Demo",
-                btn_buy_top: "Get Pro ($10)",
+                btn_buy_top: "Get Pro ($15)",
                 hero_badge: "Windows 10/11 • 100% Offline • Fountain 1.1 Format",
                 hero_title_1: "Write cinema.",
                 hero_title_2: "Simple. Distraction-free.",
                 hero_desc: "The fast, private, and <strong>one-time payment</strong> screenwriting studio. Your Early Bird pass grants full access to v1.0 and guarantees a free upgrade to v2.0 without extra fees.",
                 hero_btn_demo: "Download Free DEMO Version",
-                hero_btn_buy: "Buy Pro License — $10 USD",
+                hero_btn_buy: "Buy Pro License — $15 USD",
                 hero_badge_buy: "Early Bird (v1 + v2)",
                 hero_subtext: "Windows desktop executable • Free trial up to 10 pages • Instant unlock without reinstalling.",
-                mock_scenes_title: "Scenes (3)",
-                mock_filter_placeholder: "🔍 Filter scenes...",
-                mock_script_action: "Absolute silence. Monitors flicker, projecting a faint glow over the main console.",
-                mock_script_paren: "(looking at the map)",
-                mock_script_dialogue: "The entire screenplay is stored locally. No subscriptions, no cloud downtimes.",
-                mock_inspector_title: "Inspector (Characters)",
-                mock_martin_lines: "38 dialogue blocks",
-                mock_lucia_lines: "22 dialogue blocks",
                 feat_title: "Everything the industry requires. Zero learning curve.",
                 feat_subtitle: "Built as a native desktop application to ensure instantaneous typing even across hundreds of pages.",
                 feat_1_t: "Smart Tab / Enter Flow",
@@ -818,7 +595,7 @@
                 comp_desc: "Freedom, privacy, and fair pricing versus bloated legacy industry suites.",
                 comp_th_feature: "Feature",
                 comp_r1_c1: "Pricing Model",
-                comp_r1_c2: "$10 USD (Early Bird)",
+                comp_r1_c2: "$15 USD (Early Bird)",
                 comp_r2_c1: "Recurring Subscription",
                 comp_r2_c2: "Never (One-time pay)",
                 comp_no: "No",
@@ -857,13 +634,13 @@
                 card_pro_badge: "Early Bird until 12/31",
                 card_pro_tag: "Founder License",
                 card_pro_price_sub: "USD • Lifetime one-time payment",
-                card_pro_desc: "Receive your ACT1-XXXX-XXXX-XXXX key instantly and unlock the current version plus next generation releases.",
+                card_pro_desc: "Receive your serial key instantly and unlock the current version plus next generation releases.",
                 card_pro_item1: "Unlimited pages, scenes, and projects",
                 card_pro_item2: "Clean PDF and Word export (no watermarks)",
                 card_pro_item3: "Complete Inspector (Characters, Locations, Stats)",
                 card_pro_item4: "Production Statistics & Executive Report",
                 card_pro_item5: "Includes all v1.x updates + v2.x upgrade",
-                btn_buy_lemon: "Buy License via Lemon Squeezy — $10 USD",
+                btn_buy_lemon: "Buy License — $15 USD",
                 card_pro_security: "🔒 Official Lemon Squeezy Checkout • Instant key delivery via email.",
                 faq_title: "Frequently Asked Questions",
                 faq_subtitle: "Everything you need to know about the software and licenses.",
@@ -914,5 +691,11 @@
         }
     </script>
 
-</body>
-</html>
+
+
+
+
+
+
+
+</body></html>
